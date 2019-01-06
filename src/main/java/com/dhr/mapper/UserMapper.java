@@ -1,12 +1,29 @@
 package com.dhr.mapper;
 
-import com.dhr.entity.User;
+import java.util.List;
+
 import org.apache.ibatis.annotations.Select;
 
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.dhr.entity.User;
+
+/**
+ * Interface description
+ *
+ * @author donghuarui.
+ */
+@Repository
 public interface UserMapper {
 
-     @Select("select * from user")
-     List<User> selectAll();
+//  @Select("select * from user")
+
+    /**
+     * Method description
+     *
+     * @return
+     */
+    List<User> selectAll();
+
+    User findUserByUsername(String username);
 }

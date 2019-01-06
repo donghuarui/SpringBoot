@@ -1,18 +1,11 @@
 package com.dhr.service;
 
 import com.dhr.entity.User;
-import com.dhr.mapper.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class UserService {
-    @Autowired
-    private UserMapper userMapper;
-    
-    public List<User> selectAll(){
-        return userMapper.selectAll();
-    }
+public interface UserService {
+    List<User> selectAll();
+
+    User findUserByUsername(String username);
 }

@@ -18,23 +18,26 @@
         <relativePath/>
     </parent>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
-
-        <dependency>  <!--springMVC-->
+        <!--springMVC-->
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>  <!--thymeleaf模板引擎-->
+        <!--thymeleaf模板引擎-->
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        <!--shiro-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+            <!--<type>pom</type>-->
+        </dependency>
 
-
+        <!--mybatis-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -45,6 +48,13 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>1.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <!--data注解-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -61,7 +71,12 @@
 
     </dependencies>
 
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <!--<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>-->
+        <!--<thymeleaf-layout-dialect.version>2.0.4</thymeleaf-layout-dialect.version>-->
+    </properties>
 
 
     <build>
@@ -85,5 +100,21 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <!--<resource>-->
+            <!--<directory>src/main/resources</directory>-->
+            <!--<includes>-->
+            <!--<include>**/*.xml</include>-->
+            <!--</includes>-->
+            <!--</resource>-->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
+
+
 </project>
