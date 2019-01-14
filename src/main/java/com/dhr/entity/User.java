@@ -5,6 +5,7 @@ import org.apache.ibatis.type.Alias;
 
 import javax.naming.Name;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Administrator
@@ -20,4 +21,6 @@ public class User {
     private Character valid;
     private String creator_id;
     private String updater_id;
+    private String perms;
+    private List<Orders> ordersList;
 }

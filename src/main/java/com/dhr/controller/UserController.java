@@ -50,6 +50,11 @@ public class UserController {
         return "login";
     }
 
+    @RequestMapping("/noAuth")
+    public String noAuth(){
+        return "noAuth";
+    }
+
     /**
      * 登录处理逻辑
      * @param username

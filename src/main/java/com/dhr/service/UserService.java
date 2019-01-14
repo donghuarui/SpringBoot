@@ -1,11 +1,32 @@
 package com.dhr.service;
 
-import com.dhr.entity.User;
-
 import java.util.List;
 
-public interface UserService {
-    List<User> selectAll();
+import com.dhr.entity.Orders;
+import com.dhr.entity.User;
 
+/**
+ * Interface description
+ *
+* @author         donghuarui.
+ */
+public interface UserService {
+
+    /**
+     * 根据用户名查询用户
+     *
+     *
+     * @param username
+     *
+     * @return
+     */
     User findUserByUsername(String username);
+
+    /**
+     * 查询全部用户
+     *
+     *
+     * @return
+     */
+    List<User> selectAll();
 }
