@@ -28,5 +28,5 @@ public interface UserService {
      *
      * @return
      */
-    List<User> selectAll();
+    List<User> findUserAndOrders();
 }

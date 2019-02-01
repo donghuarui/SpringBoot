@@ -23,7 +23,7 @@ public interface UserMapper {
      *
      * @return
      */
-    List<User> selectAll();
+    List<User> findUserAndOrders();
 
     User findUserByUsername(String username);
 }

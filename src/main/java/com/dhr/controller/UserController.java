@@ -24,8 +24,8 @@ public class UserController {
 
     @RequestMapping("/findAll")
     @ResponseBody
-    public List<User> findAll() {
-        List<User> users = userService.selectAll();
+    public List<User> findUserAndOrders() {
+        List<User> users = userService.findUserAndOrders();
         return users;
     }
 

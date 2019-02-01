@@ -3,9 +3,33 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dhr.mapper.UserMapper">
-    <select id="selectAll" resultType="user">
-        SELECT *
-        FROM user
+    <resultMap id="userOrdersMap" type="com.dhr.entity.User">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="password" column="password"></result>
+        <result property="create_time" column="create_time"></result>
+        <result property="update_time" column="update_time"></result>
+        <result property="valid" column="valid"></result>
+        <result property="creator_id" column="creator_id"></result>
+        <result property="updater_id" column="updater_id"></result>
+        <result property="perms" column="perms"></result>
+        <collection property="ordersList" ofType="com.dhr.entity.Orders">
+            <id property="ordersId" column="ordersId"></id>
+            <result property="userId" column="userId"></result>
+            <result property="number" column="number"></result>
+            <result property="createTime" column="createTime"></result>
+            <result property="updateTime" column="updateTime"></result>
+            <result property="note" column="note"></result>
+        </collection>
+    </resultMap>
+
+
+    <select id="findUserAndOrders" resultMap="userOrdersMap">
+        SELECT
+            u.*,
+            o.*
+        FROM user u, orders o
+        WHERE u.id = o.userId
     </select>
     <select id="findUserByUsername" parameterType="string" resultType="user">
         SELECT *

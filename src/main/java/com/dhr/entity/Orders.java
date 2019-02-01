@@ -15,7 +15,7 @@ import java.util.Date;
 public class Orders {
 
     /** 主键订单Id  */
-    private String id;
+    private String ordersId;
 
     /** 下单用户id */
     private String userId;
