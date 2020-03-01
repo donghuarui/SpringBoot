@@ -26,7 +26,7 @@ public class Orders {
     /** 创建订单时间  */
     private Date createTime;
 
-    /** 创建订单时间  */
+    /** 修改订单时间  */
     private Date updateTime;
 
     /** 备注 */
